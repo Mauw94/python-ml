@@ -1,0 +1,28 @@
+Machine-learning data_preprocessing
+
+#step1
+import the required libraries (numpy, matplotlib.pyplot, pandas)
+
+#step2
+import the dataset
+use pandas to import the dataset, save your .py file in the folder where the dataset is located
+X will contain all the independant data 
+[:, :-1].values = select all the rows and then select all the columns -1 
+(which is the purchased column we don't select)
+y contains all the dependant data
+[:, 3].values = select all from the 3rd column (3 index)
+
+#step3
+take care of missing data 
+from sklearn.preprocessing import Imputer
+imputer will replace the missing values (check imputer help CTRL + I)
+imputer.fit() takes the matrix which contains the missing data
+and selects on which columns the missing data are present
+then we take this column with the index and apply imputer.transform() on it
+
+#step4
+encoding the cathegorical data
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+the country and purchased column both contain the same names multiple times
+(france, spain, germand, yes and no)
+we have to encode this with the label and onehotencoder
