@@ -53,7 +53,7 @@ def backwardElimination(x, sl):
                     x = np.delete(x, j, 1)
     regressor_OLS.summary()
     return x
-
+ 
 SL = 0.05
 X_opt = X[:, [0, 1, 2, 3, 4]]
 X_Modeled = backwardElimination(X_opt, SL)
